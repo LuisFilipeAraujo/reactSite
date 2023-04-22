@@ -22,7 +22,9 @@ const App = () => {
     }, []);
     
     return (
-        <h1>App</h1>
+        <div className="app">
+            <h1>MovieLand</h1>
+        </div>
     );
 }
 
