@@ -24,6 +24,13 @@ const App = () => {
     return (
         <div className="app">
             <h1>MovieLand</h1>
+
+            <div className="search">
+                <input
+                    placeholder="Search for Movies"
+                    value="Superman"  
+                />
+            </div>
         </div>
     );
 }
