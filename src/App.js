@@ -13,17 +13,23 @@ const App = () => {
     const [movies, setMovies] = useState([]);
     const [searchTerm, setSearchTerm] = useState('');
 
-    const searchMovies = async (title)=>{
+    const searchMovies = async (title) => {
         const response = await fetch(`${API_URL}&s=${title}`); //calling the API
         const data = await response.json();
 
         setMovies(data.Search);
     }
-
-    useEffect(()=>{
-        searchMovies('Spiderman');
-    }, []);
     
+    const handleKeyPress = (event) => {
+        if (event.key === "Enter") {
+            searchMovies(searchTerm);
+        }
+    }
+
+    useEffect(() => {
+        searchMovies('Rambo');
+    }, []);
+
     return (
         <div className="app">
             <h1>MovieFinder</h1>
@@ -32,8 +38,9 @@ const App = () => {
             <div className="search">
                 <input
                     placeholder="Search for Movies"
-                    value={searchTerm}  
+                    value={searchTerm}
                     onChange={(e) => setSearchTerm(e.target.value)}
+                    onKeyDown={handleKeyPress}
                 />
                 <img
                     src={SearchIcon}
@@ -43,17 +50,17 @@ const App = () => {
             </div>
 
             {movies?.length > 0
-                ?(
-                  <div className="container">
-                    {movies.map((movie) =>(
-                        <MovieCard movie ={movie}/>
-                     ))}
+                ? (
+                    <div className="container">
+                        {movies.map((movie) => (
+                            <MovieCard movie={movie} />
+                        ))}
                     </div>
                 ) :
                 (
-                 <div className=''>
-                    <h2>No movies found</h2>
-                 </div> 
+                    <div className=''>
+                        <h2>No movies found</h2>
+                    </div>
                 )
             }
         </div>
