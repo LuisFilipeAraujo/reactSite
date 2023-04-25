@@ -14,7 +14,7 @@
 
 body {
   font-family: var(--font-roboto);
-  background-color: #212426;
+  background-color: #7e2c00;
 }
 
 .app {
@@ -31,7 +31,7 @@ h1 {
   letter-spacing: 0.9px;
   background: linear-gradient(
     90deg,
-    rgba(249, 211, 180, 1) 0%,
+    rgb(227, 104, 4) 0%,
     rgba(249, 211, 180, 0) 100%
   );
   background-clip: text;
@@ -134,7 +134,7 @@ h1 {
   width: 100%;
   opacity: 0;
   top: 0;
-  color: #f9d3b4;
+  color: #e86e0a;
 }
 
 .movie:hover {
