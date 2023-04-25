@@ -7,13 +7,7 @@ import SearchIcon from './search.svg';
 
 const API_URL = 'http://www.omdbapi.com?apikey=7cb372bc';
 
-const movie1 = {
-    "Title": "Spiderman and Grandma",
-    "Year": "2009",
-    "imdbID": "tt1433184",
-    "Type": "movie",
-    "Poster": "https://m.media-amazon.com/images/M/MV5BMjE3Mzg0MjAxMl5BMl5BanBnXkFtZTcwNjIyODg5Mg@@._V1_SX300.jpg"
-}
+
 
 const App = () => {
     const [movies, setMovies] = useState([]);
